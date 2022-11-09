@@ -18,19 +18,32 @@ html {
 }
 
 body {
-  max-width: 1440px;
   font-family: "Bai Jamjuree", sans-serif;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(234, 234, 234, 0.611);
 }
 
 .container {
-  margin: 2.5rem;
+  overflow: hidden;
+  background-color: white;
   text-align: center;
+  padding: 5%;
 }
 h1,
 h2,
 h3 {
   color: var(--Dark-Grayish-Blue);
+}
+
+.history .--info,
+.snippets .--info,
+.accessClipboad .--info,
+.download .--info {
+  max-width: 68ch;
 }
 .--info {
   color: var(--GrayishBlue);
@@ -57,6 +70,9 @@ img {
 /* ! history section ========================= */
 .history {
   margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .history .logo {
   margin-bottom: 5rem;
@@ -74,6 +90,9 @@ img {
 /* !   snippets section ===================== */
 .snippets {
   margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .snippets > .--info {
@@ -90,6 +109,9 @@ img {
 
 .accessClipboad {
   margin-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .accessClipboad .--info {
   margin-block: 1.5rem 3rem;
@@ -117,8 +139,7 @@ img {
 }
 
 .partners ul {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
   gap: 3rem;
 }
@@ -126,6 +147,9 @@ img {
 /* ! clipbaod download ================ */
 .download {
   margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .download .--info {
   margin-block: 1.5rem 3rem;
@@ -154,4 +178,58 @@ footer .logo {
 
 footer li {
   margin-block: 2rem;
+}
+
+@media (min-width: 583px) {
+  .download_wrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .download_wrapper .--cta {
+    margin-top: 0;
+    padding: 1rem 2.5rem;
+    /*  */
+  }
+
+  .partners ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wokflow_features {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 970px) {
+  html {
+    font-size: 18px;
+  }
+  .partners ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .wokflow_features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .snippet_features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 0px;
+    position: relative;
+    align-items: center;
+  }
+
+  .snippet_features img {
+    transform: translateX(-20%);
+    max-width: 500rem;
+  }
+
+  .snippets .feature_items .--info {
+    max-width: 35ch;
+    /* margin-block: 0.5rem 1.5rem; */
+  }
 }
