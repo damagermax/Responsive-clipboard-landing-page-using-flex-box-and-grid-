@@ -24,14 +24,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(234, 234, 234, 0.611);
 }
 
 .container {
+  background-image: url("images/bg-header-mobile.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
   overflow: hidden;
   background-color: white;
   text-align: center;
-  padding: 5%;
+  padding-inline: 5%;
 }
 h1,
 h2,
@@ -49,6 +52,7 @@ h3 {
   color: var(--GrayishBlue);
 }
 .--cta {
+  cursor: pointer;
   display: block;
   color: white;
   text-decoration: none;
@@ -75,7 +79,7 @@ img {
   align-items: center;
 }
 .history .logo {
-  margin-bottom: 5rem;
+  margin-block: 5rem;
 }
 
 .history .--info {
@@ -160,8 +164,10 @@ img {
 
 /* ! footer ========================= */
 footer {
+  width: 100%;
   background: hsla(198, 42%, 91%, 0.348);
-  padding: 2.5rem;
+  padding-inline: 5%;
+  padding-block: 2rem;
   color: var(--GrayishBlue);
   text-align: center;
   display: flex;
@@ -179,8 +185,27 @@ footer .logo {
 footer li {
   margin-block: 2rem;
 }
+footer li:hover {
+  color: var(--StrongCyan);
+  cursor: pointer;
+}
+footer .social_icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+footer .social_icons img {
+  width: 20px;
+  cursor: pointer;
+}
 
 @media (min-width: 583px) {
+  .container {
+    background-image: url("images/bg-header-desktop.png");
+  }
+
   .download_wrapper {
     display: flex;
     gap: 1rem;
@@ -201,6 +226,24 @@ footer li {
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  footer li {
+    margin-block: 0;
+  }
+
+  footer ul {
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
   }
 }
 
